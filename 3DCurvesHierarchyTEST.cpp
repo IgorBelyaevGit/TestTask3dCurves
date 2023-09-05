@@ -56,12 +56,8 @@ int main()
     
     std::cout << "\nSort result!\n";
     for (auto& circle : CirclesOnlyVec) {
-        cout << "Radius: " << circle->GetRad() << "\n";
-        
+        cout << "Radius: " << circle->GetRad() << "\n";      
     }
-
-    
-    
 
     
     sum_radiuses = ComputeRadiusSum(CirclesOnlyVec);
@@ -116,9 +112,6 @@ void CreateContainer( vector<std::shared_ptr<Object3D>> &CurvesVector) {
         type = distType(gen);
         
 
-        //std::unique_ptr<Cookie> cookie(new Cookie(dough, sugar, cinnamon));
-
-        
 
         if (type == 1 && valueIN > 0)               
             CurvesVector.push_back( std::make_shared<Circle>(valueIN));
@@ -126,9 +119,9 @@ void CreateContainer( vector<std::shared_ptr<Object3D>> &CurvesVector) {
         if(type == 2 && valueIN * valueIN2 > 0)
             CurvesVector.push_back(std::make_shared<Ellips>(valueIN, valueIN2));
 
-        if (type == 3 && valueIN > 0) {           
+        if (type == 3 && valueIN > 0)          
             CurvesVector.push_back(std::make_shared<Helix>(valueIN, valueIN2));
-        }
+        
     }
 
 
