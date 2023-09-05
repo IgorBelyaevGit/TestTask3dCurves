@@ -120,17 +120,13 @@ void CreateContainer( vector<std::shared_ptr<Object3D>> &CurvesVector) {
 
         
 
-        if (type == 1 && valueIN > 0)         
-            //CurvesVector.push_back(new Circle(valueIN));        
+        if (type == 1 && valueIN > 0)               
             CurvesVector.push_back( std::make_shared<Circle>(valueIN));
         
-
         if(type == 2 && valueIN * valueIN2 > 0)
-            //CurvesVector.push_back(new Ellips(valueIN, valueIN2));
             CurvesVector.push_back(std::make_shared<Ellips>(valueIN, valueIN2));
 
         if (type == 3 && valueIN > 0) {           
-            //CurvesVector.push_back(new Helix(valueIN, valueIN2));
             CurvesVector.push_back(std::make_shared<Helix>(valueIN, valueIN2));
         }
     }
