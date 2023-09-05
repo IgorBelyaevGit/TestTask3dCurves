@@ -31,7 +31,7 @@ void FreeResources(vector<std::shared_ptr<Circle>>& CirclesOnlyVec, vector<std::
 
 
 
-/// NO COMMENTS BECOUSE THERE ARE NO MANY THINGS REQUIRE THEM IMHO
+
 int main()
 {
     
@@ -40,9 +40,6 @@ int main()
     float sum_radiuses = 0;
     std::vector<std::shared_ptr<Object3D>> CurvesVec;
     std::vector<std::shared_ptr<Circle>> CirclesOnlyVec;
-    
-    
-    
     
 
     CreateContainer( CurvesVec);
