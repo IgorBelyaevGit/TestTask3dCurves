@@ -6,6 +6,7 @@
 #include <random>
 #include <math.h>
 #include <omp.h>
+#include <string.h>
 #include "3DObjects.h"
 
 
@@ -131,6 +132,7 @@ void PrintPointsAndDerivs(vector< std::shared_ptr<Object3D>> &CurvesVector) {
 
     Point3D point;
     Vector3D vec;
+    string typestr;
     cout << "Number of curves: " << CurvesVector.size()<<"\n";
 
     cout << "Type\t" << "PointX\t" << "PointY\t" << "PointZ\t" << "Derivatives:\t"<<"NormalX\t"<< "NormalY\t"<< "NormalZ\n";
@@ -140,17 +142,20 @@ void PrintPointsAndDerivs(vector< std::shared_ptr<Object3D>> &CurvesVector) {
         
         point = curve->GetPointByParameter(T_PARAM);
         vec = curve->GetDerivByParameter(T_PARAM);
+        typestr.assign(typeid(*curve).name());
         
-        if (!strcmp(typeid(*curve).name(), "class Circle\0")) {
+        
+
+        if (!typestr.compare("class Circle\0")) {
             cout << "Circle " << "\t" << point.x << "\t" << point.y << "\t" << point.z << " \tDerivatives: ";
             cout << "\t" << vec.nrmlX << "\t" << vec.nrmlY << "\t" << vec.nrmlZ << " \n";
         }
             
-        if (!strcmp(typeid(*curve).name(), "class Ellips\0")) {
+        if (!typestr.compare("class Ellips\0")) {
             cout << "Ellips " << "\t" << point.x << "\t" << point.y << "\t" << point.z << " \tDerivatives: ";
             cout << "\t" << vec.nrmlX << "\t" << vec.nrmlY << "\t" << vec.nrmlZ << " \n";
         }
-        if (!strcmp(typeid(*curve).name(),"class Helix\0")) {
+        if (!typestr.compare("class Helix\0")) {
             cout << "Helix " << "\t" << point.x << "\t" << point.y << "\t" << point.z << " \tDerivatives: ";
             cout << "\t" << vec.nrmlX << "\t" << vec.nrmlY << "\t" << vec.nrmlZ << " \n";
         }
@@ -161,11 +166,11 @@ void PrintPointsAndDerivs(vector< std::shared_ptr<Object3D>> &CurvesVector) {
 }
 void CreateContainerCircles(vector<std::shared_ptr<Circle>> &CirclesOnlyVector, vector<std::shared_ptr<Object3D>> &CurvesVector) {
 
-
+    string typestr;
     for (auto& curve : CurvesVector)
     {
-        
-        if (!strcmp(typeid(*curve).name(), "class Circle\0")) {
+        typestr.assign(typeid(*curve).name());
+        if (!typestr.compare( "class Circle\0")) {
             
             CirclesOnlyVector.push_back(dynamic_pointer_cast<Circle>(curve));
         }

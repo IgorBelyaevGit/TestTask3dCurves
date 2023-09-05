@@ -1,5 +1,5 @@
 ﻿  3DCurvesHierarchyTEST.cpp
-F:\CTasks\3DCurvesHierarchyTEST\3DCurvesHierarchyTEST.cpp(73,23): warning C4018: <: несоответствие типов со знаком и без знака
-F:\CTasks\3DCurvesHierarchyTEST\3DCurvesHierarchyTEST.cpp(141,51): warning C4305: аргумент: усечение из "double" в "float"
-F:\CTasks\3DCurvesHierarchyTEST\3DCurvesHierarchyTEST.cpp(142,49): warning C4305: аргумент: усечение из "double" в "float"
+F:\CTasks\3DCurvesHierarchyTEST\3DCurvesHierarchyTEST.cpp(74,23): warning C4018: <: несоответствие типов со знаком и без знака
+F:\CTasks\3DCurvesHierarchyTEST\3DCurvesHierarchyTEST.cpp(143,51): warning C4305: аргумент: усечение из "double" в "float"
+F:\CTasks\3DCurvesHierarchyTEST\3DCurvesHierarchyTEST.cpp(144,49): warning C4305: аргумент: усечение из "double" в "float"
   3DCurvesHierarchyTEST.vcxproj -> F:\CTasks\3DCurvesHierarchyTEST\Debug\3DCurvesHierarchyTEST.exe
